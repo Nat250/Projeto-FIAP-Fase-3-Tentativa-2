@@ -24,7 +24,7 @@ const Input = styled.input`
 const Button = styled.button`
     padding: 10px 20px;
     font-size: 16px;
-    background-color: red;
+    background-color: #ed145b;
     color: white;
     border: none;
     border-radius: 4px;
@@ -32,7 +32,7 @@ const Button = styled.button`
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: red;
+        background-color: #c10e49;
     }
 
     @media (max-width: 600px) {
@@ -40,24 +40,24 @@ const Button = styled.button`
     }
 `;
 
-const AddTask: React.FC<AddTaskProps> = ({ onAddTask}) => {
+const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
     const [taskName, setTaskName] = useState('');
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onAddTask(taskName);
-        setTaskName('');
+        setTaskName(''); // Limpa o campo após adicionar
     };
     return (
-        <form onSubmit = {handleSubmit}>
-            <input
-                type = "text"
-                value = {taskName}
-                onChange = {(e) => setTaskName(e.target.value)}
-                placeholder = "Adicione uma nova tarefa"
+        <Form onSubmit={handleSubmit}>
+            <Input
+                type="text"
+                value={taskName}
+                onChange={(e) => setTaskName(e.target.value)}
+                placeholder="Adicione uma nova tarefa"
             />
-            <button type = "submit"> Adicionar </button>
-        </form>
+            <Button type="submit">Adicionar</Button>
+        </Form>
     );
-}
+};
 
 export default AddTask;

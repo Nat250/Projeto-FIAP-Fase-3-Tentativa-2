@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-    background-color: red;
+    background-color: #ed145b;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
 const Footer: React.FC = () => {
     return (
         <FooterContainer>
-            <p>Direitos autorais 2026</p>
+        <p>Direitos autorais 2026</p>
         </FooterContainer>
     );
 };

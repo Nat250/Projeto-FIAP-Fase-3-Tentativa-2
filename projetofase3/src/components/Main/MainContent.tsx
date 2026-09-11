@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 
 const Main = styled.main`
@@ -10,7 +10,7 @@ const Main = styled.main`
     align-items: center;
 `;
 
-const MainContent: React.FC<{children: React.ReactNode}> = ({children}) => {
+const MainContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <Main>
             {children}
