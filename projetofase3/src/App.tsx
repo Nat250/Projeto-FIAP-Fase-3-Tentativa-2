@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import MainContent from './components/MainContent/MainContent';
 import TaskList from './components/TaskList/TaskList';
 import AddTask from './components/AddTask/AddTask';
+import './App.css'
 
 interface Task {
   id: number;
@@ -15,9 +19,13 @@ function App(){
 
   return (
     <div className = "app-container">
-      <h1>Lista de Tarefas</h1>
+    <Header/>
+    <MainContent>
+      <h1>Pendências</h1>
       <AddTask onAddTask = {addTask} />
       <TaskList tasks = {tasks} />
+    </MainContent>
+    <Footer />
     </div>
   );
 }
