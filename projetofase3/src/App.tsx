@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MainContent from './components/MainContent/MainContent';
-import TaskList from './components/TaskList/TaskList';
-import AddTask from './components/AddTask/AddTask';
+import TaskList from './pages/TaskList/TaskList';
+import AddTask from './pages/AddTask/AddTask';
 import './App.css'
 
 interface Task {
@@ -13,9 +13,15 @@ interface Task {
 
 function App(){
   const [tasks, setTasks] = useState<Task[]>([]);
+
   const addTask = (taskName: string) => {
     setTasks([...tasks, {id: tasks.length + 1, name: taskName}]);
   };
+
+  const removeTask = (taskId: number) => {
+    setTasks(tasks.filter(task => task.id !== taskId));
+  };
+  
 
   return (
     <div className = "app-container">
@@ -23,7 +29,7 @@ function App(){
     <MainContent>
       <h1>Pendências</h1>
       <AddTask onAddTask = {addTask} />
-      <TaskList tasks = {tasks} />
+      <TaskList tasks = {tasks} onRemoveTask={removeTask} />
     </MainContent>
     <Footer />
     </div>
