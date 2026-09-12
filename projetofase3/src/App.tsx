@@ -9,7 +9,7 @@ import TaskList from './pages/TaskList/TaskList';
 import CompletedTasks from './pages/CompletedTasks/CompletedTasks';
 import PendingTasks from './pages/PendingTasks/PendingTasks';
 import taskReducer from './reducers/taskReducer';
-import { Task } from './types';
+import type { Task } from './types';
 import './App.css';
 
 const initialState = { tasks: [] as Task[] };
